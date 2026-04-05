@@ -2,130 +2,424 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>売上作れる秘書ロードマップ作成会</title>
   <style>
     body {
-      font-family: sans-serif;
       margin: 0;
-      background: #f7f7f7;
-      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(180deg, #fff8fb 0%, #fffdfd 100%);
+      color: #4a4040;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background: white;
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
     }
+
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(194, 120, 145, 0.12);
+      padding: 40px 28px;
+      margin-top: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 14px;
+      color: #b07a8e;
+      background: #fff1f6;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
     h1 {
-      font-size: 28px;
+      font-size: 34px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: #7a4157;
+      margin: 0 0 20px;
+    }
+
+    .lead {
+      font-size: 17px;
+      line-height: 2;
+      margin: 0 0 24px;
+    }
+
+    .hero-box {
+      background: #fff6f9;
+      border: 1px solid #f3d9e3;
+      border-radius: 18px;
+      padding: 20px;
+      line-height: 2;
+      margin-top: 20px;
+    }
+
+    .cta {
+      margin-top: 28px;
+      background: linear-gradient(135deg, #d96b93 0%, #c95d84 100%);
+      border-radius: 20px;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(201, 93, 132, 0.22);
+    }
+
+    .cta-text {
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .cta a {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.16);
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(194, 120, 145, 0.08);
+      padding: 36px 28px;
+      margin-top: 24px;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 1.5;
+      color: #8e4f67;
+      margin: 0 0 18px;
+      padding-left: 12px;
+      border-left: 5px solid #efc7d5;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 2;
+      margin: 14px 0;
+    }
+
+    strong {
+      color: #b04d73;
+    }
+
+    .box {
+      background: #fff6f9;
+      border: 1px solid #f3d9e3;
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 18px;
+      line-height: 2;
+    }
+
+    .price-box {
+      text-align: center;
+      background: #fff6f9;
+      border: 1px solid #f3d9e3;
+      border-radius: 22px;
+      padding: 28px 20px;
+      margin-top: 18px;
+    }
+
+    .price-label {
+      font-size: 15px;
+      color: #9b6578;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: bold;
+      color: #c14f78;
       line-height: 1.4;
     }
-    h2 {
-      margin-top: 40px;
-      font-size: 22px;
-    }
-    p {
+
+    .price-note {
+      font-size: 14px;
+      color: #7f6d73;
+      margin-top: 8px;
       line-height: 1.8;
     }
-    .cta {
-      background: #ff4d4f;
-      color: white;
+
+    .mini-cta {
       text-align: center;
-      padding: 20px;
-      margin: 40px 0;
-      border-radius: 8px;
+      margin-top: 26px;
     }
-    .cta a {
-      color: white;
+
+    .mini-cta a {
+      display: inline-block;
       text-decoration: none;
-      font-size: 20px;
+      color: #fff;
+      background: #c95d84;
+      padding: 14px 26px;
+      border-radius: 999px;
       font-weight: bold;
+      box-shadow: 0 8px 18px rgba(201, 93, 132, 0.2);
     }
-    .box {
-      background: #fafafa;
-      padding: 15px;
-      margin: 20px 0;
-      border-left: 4px solid #ff4d4f;
+
+    .profile {
+      background: linear-gradient(180deg, #fffafd 0%, #fff4f8 100%);
+    }
+
+    .footer-note {
+      font-size: 13px;
+      color: #7d6a71;
+      line-height: 1.9;
+    }
+
+    .law {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid #f0d8e1;
+      padding: 20px;
+      margin-top: 18px;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero,
+      .section {
+        padding: 28px 20px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      .lead,
+      p {
+        font-size: 15px;
+      }
+
+      .price {
+        font-size: 32px;
+      }
+
+      .cta a,
+      .mini-cta a {
+        font-size: 16px;
+        padding: 13px 22px;
+      }
     }
   </style>
 </head>
-
 <body>
-<div class="container">
+  <div class="wrap">
 
-<h1>
-スキルはあるのに稼げない人へ<br>
-「売上作れる秘書」になるためのロードマップを作ります
-</h1>
+    <section class="hero">
+      <div class="eyebrow">在宅で収入を作りたい女性へ</div>
+      <h1>
+        スキルはあるのに稼げない人へ。<br>
+        「売上作れる秘書」になるための<br>
+        ロードマップを一緒に作ります。
+      </h1>
 
-<p>
-Canva、動画編集、事務作業…<br>
-スキルはあるのに収入が増えない
-</p>
+      <p class="lead">
+        Canva、動画編集、事務作業、SNS運用。<br>
+        いろいろ学んできたのに、思うように収入につながらない。
+      </p>
 
-<p>
-その原因はシンプルです。<br>
-<strong>「お金に変える設計がない」</strong>から。
-</p>
+      <p class="lead">
+        それは、能力が足りないからではありません。<br>
+        <strong>“どうやってお金に変えるか”の設計がまだないだけ</strong>です。
+      </p>
 
-<h2>このサービスでやること</h2>
+      <div class="hero-box">
+        このロードマップ作成会では、あなたの今の状況を整理したうえで、<br>
+        どのポジションで収益化するのが最短なのか、何を価値として打ち出すのか、
+        どうやって仕事を取っていくのかまでを一緒に設計します。<br><br>
+        ただ相談して終わるのではなく、<strong>30日以内に動ける状態</strong>まで落とし込むのがこのサービスです。
+      </div>
 
-<div class="box">
-・収益化ルートの設計<br>
-・提供価値の言語化<br>
-・仕事の取り方の設計<br>
-・営業の流れの設計<br>
-・30日アクションプラン作成
-</div>
+      <div class="cta">
+        <div class="cta-text">
+          自分に合った収益化ルートを明確にしたい方はこちら
+        </div>
+        <a href="ここに決済リンク">ロードマップ作成会に申し込む</a>
+      </div>
+    </section>
 
-<h2>こんな人におすすめ</h2>
+    <section class="section">
+      <h2>こんなお悩みはありませんか？</h2>
+      <div class="box">
+        スキルはあるのに、なかなか案件につながらない。<br>
+        在宅で働きたい気持ちはあるのに、何から始めたらいいかわからない。<br>
+        単価が低く、頑張っても思うように収入が増えない。<br>
+        自分の強みや提供価値をうまく言語化できない。<br>
+        仕事の取り方や営業の流れが曖昧で、毎回感覚で動いてしまっている。
+      </div>
 
-<div class="box">
-・スキルはあるのに稼げない<br>
-・在宅で収入を作りたい<br>
-・何からやればいいかわからない<br>
-・単価を上げたい<br>
-</div>
+      <p>
+        こうした悩みを持つ人はとても多いです。  
+        でも実は、ここでつまずく原因のほとんどはスキル不足ではなく、<strong>設計不足</strong>です。
+      </p>
 
-<h2>サービス内容</h2>
+      <p>
+        だからこそ必要なのは、新しい知識を増やすことよりも先に、  
+        自分がどこでお金を作るのかを明確にすることです。
+      </p>
+    </section>
 
-<p>
-オンライン（Zoom）90分で<br>
-あなたの現状から逆算して<br>
-収益化の設計を行います
-</p>
+    <section class="section">
+      <h2>このサービスで得られること</h2>
+      <p>
+        このセッションでは、あなたの現状を整理しながら、今なぜ収益化できていないのかを明確にします。
+      </p>
 
-<p>
-終了後、実行できる設計資料をお渡しします
-</p>
+      <p>
+        そのうえで、あなたのスキルや経験、性格、市場ニーズを踏まえて、  
+        <strong>最も早く収益化しやすいルート</strong>を一緒に決めていきます。
+      </p>
 
-<h2>料金</h2>
+      <p>
+        さらに、誰に何を提供するのかという提供価値の整理、  
+        仕事の取り方の導線設計、営業の基本的な流れ、  
+        そして30日間のアクションプランまで落とし込みます。
+      </p>
 
-<p><strong>19,800円（税込）</strong></p>
+      <div class="box">
+        セッション後には、あなた専用の収益化ルート、提供価値、仕事獲得導線、
+        営業の流れ、30日アクションプランをまとめた内容をお渡しします。<br><br>
+        つまり手に入るのは、ただのアドバイスではなく、
+        <strong>そのまま動き出せる「収益化の設計図」</strong>です。
+      </div>
+    </section>
 
-<div class="cta">
-<a href="ここに決済リンク">今すぐ申し込む</a>
-</div>
+    <section class="section">
+      <h2>セッション内容</h2>
+      <p>
+        まず最初に、あなたのスキル、経験、現在の収入状況、これまでの行動を整理し、
+        今の状態を客観的に見ていきます。
+      </p>
 
-<h2>注意事項</h2>
+      <p>
+        その次に、あなたに合った収益化ルートを設計します。  
+        単なる作業者として働くのか、営業に関わるポジションを取るのか、
+        あるいはディレクションまで担うのか。  
+        どこで勝つのが最短なのかを明確にします。
+      </p>
 
-<p>
-本サービスは成果を保証するものではありません<br>
-提供内容は事前情報に基づきます<br>
-</p>
+      <p>
+        そこから、あなたが何者として売られるべきかを言語化し、
+        仕事を取るための導線設計、営業の型、実際に行動に移すための30日プランまでを決めていきます。
+      </p>
 
-<h2>特定商取引法に基づく表記</h2>
+      <div class="box">
+        オンラインZoom 90分の個別セッションです。<br>
+        一人ひとりの状況に合わせて内容を設計するため、完全個別で実施します。
+      </div>
+    </section>
 
-<p>
-事業者名：株式会社Suzuwin<br>
-代表者名：鈴木裕子<br>
-メール：yuco.suzuki@suzuwin.jp<br>
-販売価格：19,800円<br>
-支払方法：クレジットカード<br>
-提供時期：決済後、日程調整<br>
-返金：原則不可
-</p>
+    <section class="section profile">
+      <h2>このサービスを提供する人</h2>
+      <p>
+        私はこれまで、営業組織の構築、売上導線の設計、コールセンター運営、
+        BtoB・BtoCの営業設計、フリーランスの収益化支援など、
+        <strong>「売上が上がる構造」を作る支援</strong>を行ってきました。
+      </p>
 
-</div>
+      <p>
+        実際に、売上改善、予約導線改善、営業率改善など、
+        構造を整えることで結果を変えてきた経験があります。
+      </p>
+
+      <p>
+        だからこそこのサービスでは、ふわっとしたアドバイスではなく、  
+        実務ベースで「どうしたら収益につながるか」を現実的に設計していきます。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>こんな方におすすめです</h2>
+      <div class="box">
+        在宅で収入を作りたい方。<br>
+        スキルはあるのに仕事につながらない方。<br>
+        自分の強みをどう打ち出せばいいかわからない方。<br>
+        単価を上げたい方。<br>
+        継続案件につながる動きを作りたい方。<br>
+        何から始めればいいか整理したい方。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>料金</h2>
+      <div class="price-box">
+        <div class="price-label">売上作れる秘書ロードマップ作成会</div>
+        <div class="price">19,800円（税込）</div>
+        <div class="price-note">
+          Zoom90分の個別セッションです。<br>
+          実施後、内容をもとにした設計内容を整理してお渡しします。
+        </div>
+      </div>
+
+      <div class="mini-cta">
+        <a href="ここに決済リンク">今すぐ申し込む</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>最後に</h2>
+      <p>
+        スキルがあるのに稼げないのは、本当にもったいないことです。
+      </p>
+
+      <p>
+        でもそれは、あなたに価値がないからではありません。  
+        ただ、まだ収益化の設計ができていないだけです。
+      </p>
+
+      <p>
+        もし今、何から始めればいいかわからない、  
+        でも本気で収入を変えていきたいと思っているなら、  
+        まずはここで一度、あなたの動きを整理してみてください。
+      </p>
+
+      <p>
+        今のあなたから最短で結果につながるルートを、一緒に作ります。
+      </p>
+
+      <div class="cta">
+        <div class="cta-text">
+          自分に合った収益化の動きを明確にしたい方はこちら
+        </div>
+        <a href="ここに決済リンク">ロードマップ作成会に申し込む</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>特定商取引法に基づく表記</h2>
+      <div class="law">
+        事業者名：〇〇〇〇<br>
+        代表者名：〇〇〇〇<br>
+        所在地：〇〇〇〇<br>
+        メールアドレス：〇〇〇〇<br>
+        販売価格：19,800円（税込）<br>
+        支払い方法：クレジットカード決済<br>
+        提供時期：決済後、日程調整のうえ個別に実施します。<br>
+        返品・返金：サービスの性質上、原則として返金はお受けしておりません。
+      </div>
+      <p class="footer-note">
+        ※表記内容はご自身の事業情報に合わせて必ず修正してください。
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>
